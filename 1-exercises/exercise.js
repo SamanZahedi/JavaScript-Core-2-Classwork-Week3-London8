@@ -32,6 +32,8 @@ let textElements = document.querySelector("#jumbotronText");
 console.log(textElements);
 
 let pPrimaryElements = document.querySelectorAll(".primary-content p");
+// OR
+//let primaryContentParagraphsSolution2 = document.querySelector(".primary-content").querySelectorAll("p");
 console.log(pPrimaryElements);
 
 /*
@@ -57,6 +59,12 @@ changeBtn.addEventListener("click", () => {
   let body = document.querySelector("body");
   body.style.backgroundColor = "red";
 });
+// OR
+// let changeBgBtn = document.querySelector("#bgrChangeBtn");
+// changeBgBtn.addEventListener("click", () => {
+//   let body = document.querySelector("body");
+//   body.classList.add("background--red");
+// });
 /*
 Task 4
 ======
@@ -81,6 +89,16 @@ let addText = document.querySelector("#addArticleBtn");
 addText.addEventListener("click", () => {
   let newP = document.createElement("p");
   let addArticle = document.querySelector("#addArticle");
-  newP.innerText = document.querySelector("#addArticleInput").value;
+  let inputText = document.querySelector("#addArticleInput");
+  newP.innerText = inputText.value;
   addArticle.appendChild(newP);
+  inputText.value = ""; // resets the input field
 });
+//
+// let addText = document.querySelector("#addArticleBtn");
+// addText.addEventListener("click", () => {
+//   let newP = document.createElement("p");
+//   let addArticle = document.querySelector("#addArticle");
+//   newP.innerText = document.querySelector("#addArticleInput").value;
+//   addArticle.appendChild(newP);
+// });
