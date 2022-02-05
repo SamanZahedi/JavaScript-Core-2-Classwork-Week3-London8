@@ -22,7 +22,17 @@ Write JavaScript below that console.logs:
     --> should log a list of nodes with a length of 3
 
 */
+let pElements = document.querySelectorAll("p");
+console.log(pElements);
 
+let divElements = document.querySelector(".site-header");
+console.log(divElements);
+
+let textElements = document.querySelector("#jumbotronText");
+console.log(textElements);
+
+let pPrimaryElements = document.querySelectorAll(".primary-content p");
+console.log(pPrimaryElements);
 
 /*
 Task 2
@@ -30,7 +40,10 @@ Task 2
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
-
+let alertBtn = document.querySelector("#alertBtn");
+alertBtn.addEventListener("click", () => {
+  alert("Thanks for visiting Bikes for Refugees!");
+});
 
 /*
 Task 3
@@ -39,16 +52,24 @@ Task 3
 When a user clicks the 'Change colour' button, the background colour of the page should change to red.
 Hint: can you do this with a CSS class instead of adding styles to the element?
 */
-
-
+let changeBtn = document.querySelector("#bgrChangeBtn");
+changeBtn.addEventListener("click", () => {
+  let body = document.querySelector("body");
+  body.style.backgroundColor = "red";
+});
 /*
 Task 4
 ======
 
 When a user clicks the 'Larger links!' button, the text of all links on the page should increase.
 */
-
-
+let largerLinkBtn = document.querySelector("#largerLinksBtn");
+largerLinkBtn.addEventListener("click", () => {
+  let links = document.querySelectorAll("a");
+  for (let link of links) {
+    link.style.fontSize = "25px";
+  }
+});
 /*
 Task 5
 ======
@@ -56,3 +77,10 @@ Task 5
 When a user clicks the 'Add some text' button, the text in the input field should be appended to the page as a new paragraph below it.
 Hint: the new paragraph should be appended to the element with id 'addArticle'.
 */
+let addText = document.querySelector("#addArticleBtn");
+addText.addEventListener("click", () => {
+  let newP = document.createElement("p");
+  let addArticle = document.querySelector("#addArticle");
+  newP.innerText = document.querySelector("#addArticleInput").value;
+  addArticle.appendChild(newP);
+});
